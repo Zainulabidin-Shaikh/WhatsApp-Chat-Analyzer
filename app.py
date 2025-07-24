@@ -48,12 +48,34 @@ if uploaded_file is not None:
         # Button to trigger analysis
         if st.sidebar.button("Show Analysis"):
 
+            num_messages = fetch_stats(selected_user, df)[0] # Total messages for selected user
+            num_words = fetch_stats(selected_user, df)[1] 
+            num_media_messages = fetch_stats(selected_user, df)[2]
 
 
             col1, col2, col3, col4 = st.columns(4)  # Create 4 columns for layout
             with col1:
-                st.header("Total Messages")
-                # You can add more analysis here
+                st.markdown(
+                    f"<span style='font-size:2.0em; font-weight:bold;'>Total Messages</span><br>" 
+                    f"<span style='font-size:2.5em; font-weight:bold;'>{num_messages}</span>", 
+                    # Display the number of messages
+                    unsafe_allow_html=True
+                )
+            with col2:
+                st.markdown(
+                    f"<span style='font-size:2.0em; font-weight:bold;'>Total Words</span><br>"
+                    f"<span style='font-size:2.5em; font-weight:bold;'>{num_words}</span>",
+                    # Display the number of words
+                    unsafe_allow_html=True
+                )
+
+            with col3:
+                st.markdown(
+                    f"<span style='font-size:2.0em; font-weight:bold;'>Number Of Media Msg</span><br>"
+                    f"<span style='font-size:2.5em; font-weight:bold;'>{num_media_messages}</span>",
+                    # Display the number of media messages
+                    unsafe_allow_html=True
+    )
 
     except CustomException as ce:
         logging.error(f"CustomException: {ce}")

@@ -5,5 +5,5 @@ matplotlib
 scikit-learn
 streamlit
 plotly
-re
+urlextract
 # -e . 
