@@ -6,4 +6,7 @@ scikit-learn
 streamlit
 plotly
 urlextract
+wordcloud
+nltk
+emoji
 # -e . 
