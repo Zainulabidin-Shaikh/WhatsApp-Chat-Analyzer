@@ -186,10 +186,9 @@ if uploaded_file is not None:
                 st.dataframe(emoji_df)
 
             with col2:
-                plt.rcParams['font.family'] = 'Segoe UI Emoji'  # For Windows
+                plt.rcParams['font.family'] = 'Arial Unicode MS'  # For Windows
                 fig, ax = plt.subplots()
                 ax.pie(emoji_df[1], labels=emoji_df[0], autopct='%1.1f%%', startangle=140)
-                # plt.xticks(rotation='vertical')
                 st.pyplot(fig) 
 
             col1 = st.columns(1)[0]     
