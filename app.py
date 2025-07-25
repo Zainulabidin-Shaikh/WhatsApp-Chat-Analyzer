@@ -13,7 +13,9 @@ from src.utils import emoji_usage_over_time, emoji_usage_by_user, monthly_timeli
 
 import matplotlib.pyplot as plt
 import seaborn as sns
-import sys
+import nltk
+nltk.download('stopwords')
+
 
 # Set up the sidebar UI
 st.sidebar.title("WhatsApp Chat Analyzer")
